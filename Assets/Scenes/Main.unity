@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myTransform: {fileID: 0}
+  animatorHandler: {fileID: 0}
   rigidbody: {fileID: 0}
   normalCamera: {fileID: 0}
   movementSpeed: 5
@@ -544,17 +545,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 559796928}
     m_Modifications:
-    - target: {fileID: 3320863318700372241, guid: 92830266ba3075c4196b1fbb3247ebb8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.2
+    - target: {fileID: 137374322899173893, guid: 92830266ba3075c4196b1fbb3247ebb8, type: 3}
+      propertyPath: canRotate
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3320863318700372241, guid: 92830266ba3075c4196b1fbb3247ebb8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3320863318700372241, guid: 92830266ba3075c4196b1fbb3247ebb8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.2
+    - target: {fileID: 2107132379245065913, guid: 92830266ba3075c4196b1fbb3247ebb8, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: d585f4c66401d4a428ef164c9ee16b25, type: 3}
+    - target: {fileID: 2107132379245065913, guid: 92830266ba3075c4196b1fbb3247ebb8, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ed85cb3aace1ef4448cc043db5c96f41, type: 2}
+    - target: {fileID: 2107132379245065913, guid: 92830266ba3075c4196b1fbb3247ebb8, type: 3}
+      propertyPath: m_CullingMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3320863318700372241, guid: 92830266ba3075c4196b1fbb3247ebb8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -622,6 +627,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 559796928}
     m_Modifications:
+    - target: {fileID: 4643508690968230596, guid: 442a83acebb6d6f4d90c094caf987f1d, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 8d82226758489bb4e86de2ab81d9d3fa, type: 3}
     - target: {fileID: 5661148446306453793, guid: 442a83acebb6d6f4d90c094caf987f1d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
