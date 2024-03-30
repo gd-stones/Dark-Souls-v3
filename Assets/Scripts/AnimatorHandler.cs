@@ -22,7 +22,7 @@ namespace StonesGaming
             horizontal = Animator.StringToHash("Horizontal");
         }
 
-        public void UpdateAnimatorValues(float verticalMovement, float horizontalMovement)
+        public void UpdateAnimatorValues(float verticalMovement, float horizontalMovement, bool isSprinting)
         {
             #region Vertical
             float v = 0;
@@ -72,8 +72,15 @@ namespace StonesGaming
             }
             #endregion
 
+            if (isSprinting)
+            {
+                v = 2;
+                h = horizontalMovement;
+            }
+
             anim.SetFloat(vertical, v, 0.1f, Time.deltaTime);
             anim.SetFloat(horizontal, v, 0.1f, Time.deltaTime);
+
         }
 
         public void PlayTargetAnimation(string targerAnim, bool isInteracting)
