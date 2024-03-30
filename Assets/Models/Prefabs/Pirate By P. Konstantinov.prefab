@@ -1611,6 +1611,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5661148446306453793}
   - component: {fileID: 4643508690968230596}
+  - component: {fileID: 3628154330580546156}
   m_Layer: 0
   m_Name: Pirate By P. Konstantinov
   m_TagString: Untagged
@@ -1656,6 +1657,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3628154330580546156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5836787544967903239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3482c00521e2c2a418302e0f6b37d1a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  canRotate: 0
 --- !u!1 &5946888466358187514
 GameObject:
   m_ObjectHideFlags: 0
