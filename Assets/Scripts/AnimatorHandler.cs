@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace StonesGaming
@@ -79,7 +77,7 @@ namespace StonesGaming
             }
 
             anim.SetFloat(vertical, v, 0.1f, Time.deltaTime);
-            anim.SetFloat(horizontal, v, 0.1f, Time.deltaTime);
+            anim.SetFloat(horizontal, h, 0.1f, Time.deltaTime);
 
         }
 

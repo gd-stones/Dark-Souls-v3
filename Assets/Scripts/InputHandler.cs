@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace StonesGaming
@@ -29,17 +26,6 @@ namespace StonesGaming
             cameraHandler = CameraHandler.singleton;
         }
 
-        private void FixedUpdate()
-        {
-            float delta = Time.fixedDeltaTime;
-
-            if (cameraHandler != null)
-            {
-                cameraHandler.FollowTarget(delta);
-                cameraHandler.HandleCameraRotation(delta, mouseX, mouseY);
-            }
-        }
-
         public void OnEnable()
         {
             if (inputActions == null)
@@ -50,6 +36,17 @@ namespace StonesGaming
             }
 
             inputActions.Enable();
+        }
+
+        private void FixedUpdate()
+        {
+            float delta = Time.fixedDeltaTime;
+
+            if (cameraHandler != null)
+            {
+                cameraHandler.FollowTarget(delta);
+                cameraHandler.HandleCameraRotation(delta, mouseX, mouseY);
+            }
         }
 
         private void OnDisable()

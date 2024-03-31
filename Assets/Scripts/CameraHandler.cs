@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace StonesGaming
@@ -42,7 +40,7 @@ namespace StonesGaming
                 singleton = this;
             }
 
-            myTransform = GetComponent<Transform>(); // modified
+            myTransform = GetComponent<Transform>(); 
             defaultPosition = cameraTransform.localPosition.z;
             ignoreLayers = ~(1 << 8 | 1 << 9 | 1 << 10);
         }
@@ -50,7 +48,6 @@ namespace StonesGaming
         public void FollowTarget(float delta)
         {
             Vector3 targetPosition = Vector3.SmoothDamp(myTransform.position, targetTransform.position, ref cameraFollowVelocity, delta / followSpeed);
-            
             myTransform.position = targetPosition;
 
             HandleCameraCollisions(delta);
@@ -69,7 +66,6 @@ namespace StonesGaming
 
             rotation = Vector3.zero;
             rotation.x = pivotAngle;
-
             targetRotation = Quaternion.Euler(rotation);
             cameraPivotTransform.localRotation = targetRotation;
         }
