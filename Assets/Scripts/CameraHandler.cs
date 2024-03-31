@@ -33,8 +33,16 @@ namespace StonesGaming
 
         private void Awake()
         {
-            singleton = this;
-            myTransform = transform;
+            if (singleton != null)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                singleton = this;
+            }
+
+            myTransform = GetComponent<Transform>(); // modified
             defaultPosition = cameraTransform.localPosition.z;
             ignoreLayers = ~(1 << 8 | 1 << 9 | 1 << 10);
         }
@@ -42,6 +50,7 @@ namespace StonesGaming
         public void FollowTarget(float delta)
         {
             Vector3 targetPosition = Vector3.SmoothDamp(myTransform.position, targetTransform.position, ref cameraFollowVelocity, delta / followSpeed);
+            
             myTransform.position = targetPosition;
 
             HandleCameraCollisions(delta);
@@ -79,7 +88,7 @@ namespace StonesGaming
                 targetPosition = -(dis - cameraCollisionOffset);
             }
 
-            if ( Mathf.Abs(targetPosition) < minimumCollisionOffset)
+            if (Mathf.Abs(targetPosition) < minimumCollisionOffset)
             {
                 targetPosition = -minimumCollisionOffset;
             }
