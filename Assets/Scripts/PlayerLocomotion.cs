@@ -50,7 +50,6 @@ namespace StonesGaming
 
             targetDir = cameraObject.forward * inputHandler.vertical;
             targetDir += cameraObject.right * inputHandler.horizontal;
-
             targetDir.Normalize();
             targetDir.y = 0;
 
@@ -66,7 +65,9 @@ namespace StonesGaming
         public void HandleMovement(float delta)
         {
             if (inputHandler.rollFlag)
+            {
                 return;
+            }
 
             moveDirection = cameraObject.forward * inputHandler.vertical;
             moveDirection += cameraObject.right * inputHandler.horizontal;
@@ -87,7 +88,6 @@ namespace StonesGaming
 
             Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
             rigidbody.velocity = projectedVelocity;
-
             animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0, isSprinting);
 
             if (animatorHandler.canRotate)

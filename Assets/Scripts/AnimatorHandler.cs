@@ -78,7 +78,6 @@ namespace StonesGaming
 
             anim.SetFloat(vertical, v, 0.1f, Time.deltaTime);
             anim.SetFloat(horizontal, h, 0.1f, Time.deltaTime);
-
         }
 
         public void PlayTargetAnimation(string targerAnim, bool isInteracting)
