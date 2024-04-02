@@ -122,6 +122,7 @@ namespace StonesGaming
             }
         }
 
+        [SerializeField] float additionalFallingAcceleration = 20f;
         public void HandleFalling(float delta, Vector3 moveDirection)
         {
             playerManager.isGrounded = false;
@@ -137,6 +138,11 @@ namespace StonesGaming
             if (playerManager.isInAir)
             {
                 rigidbody.AddForce(-Vector3.up * fallingSpeed);
+
+                // Additional force that increases with time in the air to simulate faster falling.
+                rigidbody.AddForce(-Vector3.up * additionalFallingAcceleration * inAirTimer);
+
+
                 rigidbody.AddForce(moveDirection * fallingSpeed / 10f);
             }
 
