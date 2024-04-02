@@ -19,8 +19,6 @@ namespace StonesGaming
         Vector2 movementInput;
         Vector2 cameraInput;
 
-        
-
         public void OnEnable()
         {
             if (inputActions == null)

@@ -232,7 +232,6 @@ MonoBehaviour:
   rollFlag: 0
   sprintFlag: 0
   rollInputTimer: 0
-  isInteracting: 0
 --- !u!114 &559796932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +251,6 @@ MonoBehaviour:
   movementSpeed: 5
   sprintSpeed: 7
   rotationSpeed: 10
-  isSprinting: 0
 --- !u!114 &559796933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,6 +263,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 869fbe0219a149f42bdfb75c23c6019f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInteracting: 0
+  isSprinting: 0
 --- !u!1 &653542206
 GameObject:
   m_ObjectHideFlags: 0
