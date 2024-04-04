@@ -138,11 +138,7 @@ namespace StonesGaming
             if (playerManager.isInAir)
             {
                 rigidbody.AddForce(-Vector3.up * fallingSpeed);
-
-                // Additional force that increases with time in the air to simulate faster falling.
-                rigidbody.AddForce(-Vector3.up * additionalFallingAcceleration * inAirTimer);
-
-
+                rigidbody.AddForce(-Vector3.up * additionalFallingAcceleration * inAirTimer); // Additional force that increases with time in the air to simulate faster falling.
                 rigidbody.AddForce(moveDirection * fallingSpeed / 10f);
             }
 
@@ -158,7 +154,7 @@ namespace StonesGaming
                 normalVector = hit.normal;
                 Vector3 tp = hit.point;
                 playerManager.isGrounded = true;
-                targetPosition.y = tp.y;
+                targetPosition.y = tp.y; // Keeps the player on the ground even though the capsule collider does not touch the floor's mesh collider
 
                 if (playerManager.isInAir)
                 {

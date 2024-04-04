@@ -11,7 +11,6 @@ namespace StonesGaming
         PlayerLocomotion playerLocomotion;
 
         public bool isInteracting;
-
         [Header("Player Flags")]
         public bool isSprinting;
         public bool isInAir;

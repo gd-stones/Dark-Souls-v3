@@ -4,6 +4,8 @@ namespace StonesGaming
 {
     public class CameraHandler : MonoBehaviour
     {
+        public static CameraHandler singleton;
+
         public Transform targetTransform;
         public Transform cameraTransform;
         public Transform cameraPivotTransform;
@@ -11,9 +13,7 @@ namespace StonesGaming
         private Vector3 cameraTransformPosition;
         private LayerMask ignoreLayers;
         private Vector3 cameraFollowVelocity = Vector3.zero;
-
-        public static CameraHandler singleton;
-
+        
         public float lookSpeed = 0.1f;
         public float followSpeed = 0.1f;
         public float pivotSpeed = 0.03f;
