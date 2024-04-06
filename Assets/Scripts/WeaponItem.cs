@@ -10,6 +10,5 @@ namespace StonesGaming
     {
         public GameObject modelPrefab;
         public bool isUnarmed;
-
     }
 }

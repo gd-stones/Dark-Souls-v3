@@ -9,6 +9,5 @@ namespace StonesGaming
         [Header ("Item Infomation")]
         public Sprite itemIcon;
         public string itemName;
-
     }
 }
