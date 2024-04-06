@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace StonesGaming
@@ -23,9 +24,12 @@ namespace StonesGaming
         [Header("Movement Stats")]
         [SerializeField] float movementSpeed = 5;
         [SerializeField] float sprintSpeed = 7;
-        [SerializeField] float rotationSpeed = 10;
+        [SerializeField] float rotationSpeed = 8.5f;
         [SerializeField] float fallingSpeed = 45;
 
+
+        // customize
+        public CapsuleCollider capsuleCollider;
         void Start()
         {
             playerManager = GetComponent<PlayerManager>();
@@ -38,6 +42,9 @@ namespace StonesGaming
 
             playerManager.isGrounded = true;
             ignoreForGroundCheck = ~(1 << 8 | 1 << 11);
+
+            // customize
+            capsuleCollider = GetComponent<CapsuleCollider>();
         }
 
         #region Movement
@@ -100,7 +107,8 @@ namespace StonesGaming
 
         public void HandleRollingAndSprinting(float delta)
         {
-            if (animatorHandler.anim.GetBool("isInteracting"))
+            //if (animatorHandler.anim.GetBool("isInteracting"))
+            if (playerManager.isInteracting)
                 return;
 
             if (inputHandler.rollFlag)
@@ -127,7 +135,7 @@ namespace StonesGaming
         {
             playerManager.isGrounded = false;
             RaycastHit hit;
-            Vector3 origin = myTransform.position;
+            Vector3 origin = myTransform.position - new Vector3(0, 0, 0.2f);
             origin.y += groundDetectionRayStartPoint;
 
             if (Physics.Raycast(origin, myTransform.forward, out hit, 0.4f))
@@ -145,7 +153,6 @@ namespace StonesGaming
             Vector3 dir = moveDirection;
             dir.Normalize();
             origin = origin + dir * groundDirectionRayDistance;
-
             targetPosition = myTransform.position;
 
             Debug.DrawRay(origin, -Vector3.up * minimumDistanceNeededToBeginFall, Color.red, 0.1f, false);
@@ -154,6 +161,7 @@ namespace StonesGaming
                 normalVector = hit.normal;
                 Vector3 tp = hit.point;
                 playerManager.isGrounded = true;
+                capsuleCollider.radius = 0.2f; // customize
                 targetPosition.y = tp.y; // Keeps the player on the ground even though the capsule collider does not touch the floor's mesh collider
 
                 if (playerManager.isInAir)
@@ -162,14 +170,13 @@ namespace StonesGaming
                     {
                         Debug.Log("You were in air for " + inAirTimer);
                         animatorHandler.PlayTargetAnimation("Land", true);
-                        inAirTimer = 0;
                     }
                     else
                     {
                         animatorHandler.PlayTargetAnimation("Locomotion", false);
-                        inAirTimer = 0;
                     }
 
+                    inAirTimer = 0;
                     playerManager.isInAir = false;
                 }
             }
@@ -185,6 +192,7 @@ namespace StonesGaming
                     if (playerManager.isInteracting == false)
                     {
                         animatorHandler.PlayTargetAnimation("Falling", true);
+                        capsuleCollider.radius = 0; // customize
                     }
 
                     Vector3 velocity = rigidbody.velocity;
