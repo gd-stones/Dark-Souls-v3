@@ -91,7 +91,6 @@ namespace StonesGaming
             inputActions.PlayerActions.RB.performed += i => rb_Input = true;
             inputActions.PlayerActions.RT.performed += i => rt_Input = true;
 
-            // RB input handles the right hand weapon's light attack
             if (rb_Input)
             {
                 playerAttacker.HandleLightAttack(playerInventory.rightWeapon);

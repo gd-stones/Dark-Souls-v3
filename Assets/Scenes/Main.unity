@@ -12883,6 +12883,7 @@ GameObject:
   - component: {fileID: 559796931}
   - component: {fileID: 559796933}
   - component: {fileID: 559796934}
+  - component: {fileID: 559796935}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -12975,6 +12976,8 @@ MonoBehaviour:
   mouseX: 0
   mouseY: 0
   b_Input: 0
+  rb_Input: 0
+  rt_Input: 0
   rollFlag: 0
   sprintFlag: 0
   rollInputTimer: 0
@@ -13000,6 +13003,7 @@ MonoBehaviour:
   groundDirectionRayDistance: 0.05
   inAirTimer: 0
   movementSpeed: 5
+  walkingSpeed: 6
   sprintSpeed: 7
   rotationSpeed: 8
   fallingSpeed: 18
@@ -13034,6 +13038,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightWeapon: {fileID: 11400000, guid: 7fc2911e8f06f5c438ed7da3b2d98d00, type: 2}
   leftWeapon: {fileID: 11400000, guid: 7fc2911e8f06f5c438ed7da3b2d98d00, type: 2}
+--- !u!114 &559796935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559796927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3496f27fe0b5b64ab5039693f7c7383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &653542206
 GameObject:
   m_ObjectHideFlags: 0
