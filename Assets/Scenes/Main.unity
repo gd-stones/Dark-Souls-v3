@@ -14127,6 +14127,18 @@ PrefabInstance:
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: 8d82226758489bb4e86de2ab81d9d3fa, type: 3}
+    - target: {fileID: 4643508690968230596, guid: 442a83acebb6d6f4d90c094caf987f1d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643508690968230596, guid: 442a83acebb6d6f4d90c094caf987f1d, type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643508690968230596, guid: 442a83acebb6d6f4d90c094caf987f1d, type: 3}
+      propertyPath: m_CullingMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5661148446306453793, guid: 442a83acebb6d6f4d90c094caf987f1d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
