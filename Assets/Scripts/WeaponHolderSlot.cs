@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace StonesGaming
@@ -9,7 +7,6 @@ namespace StonesGaming
         public Transform parentOverride;
         public bool isLeftHandSlot;
         public bool isRightHandSlot;
-
         public GameObject currentWeaponModel;
 
         public void UnloadWeapon()
@@ -20,7 +17,7 @@ namespace StonesGaming
             }
         }
 
-        public void UploadWeaponAndDestroy()
+        public void UnloadWeaponAndDestroy()
         {
             if (currentWeaponModel != null)
             {
@@ -30,7 +27,7 @@ namespace StonesGaming
 
         public void LoadWeaponModel(WeaponItem weaponItem)
         {
-            UploadWeaponAndDestroy();
+            UnloadWeaponAndDestroy();
 
             if (weaponItem == null)
             {

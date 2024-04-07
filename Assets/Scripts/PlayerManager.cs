@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace StonesGaming
 {
@@ -28,17 +27,6 @@ namespace StonesGaming
             playerLocomotion = GetComponent<PlayerLocomotion>();
         }
 
-        void Update()
-        {
-            float delta = Time.deltaTime;
-
-            isInteracting = anim.GetBool("isInteracting");
-            inputHandler.TickInput(delta);
-            playerLocomotion.HandleMovement(delta);
-            playerLocomotion.HandleRollingAndSprinting(delta);
-            playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
-        }
-
         private void FixedUpdate()
         {
             float delta = Time.fixedDeltaTime;
@@ -48,6 +36,17 @@ namespace StonesGaming
                 cameraHandler.FollowTarget(delta);
                 cameraHandler.HandleCameraRotation(delta, inputHandler.mouseX, inputHandler.mouseY);
             }
+        }
+
+        void Update()
+        {
+            float delta = Time.deltaTime;
+
+            isInteracting = anim.GetBool("isInteracting");
+            inputHandler.TickInput(delta);
+            playerLocomotion.HandleMovement(delta);
+            playerLocomotion.HandleRollingAndSprinting(delta);
+            playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
         }
 
         private void LateUpdate()

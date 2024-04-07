@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace StonesGaming
@@ -27,9 +26,6 @@ namespace StonesGaming
         [SerializeField] float rotationSpeed = 8.5f;
         [SerializeField] float fallingSpeed = 45;
 
-
-        // customize
-        public CapsuleCollider capsuleCollider;
         void Start()
         {
             playerManager = GetComponent<PlayerManager>();
@@ -42,9 +38,6 @@ namespace StonesGaming
 
             playerManager.isGrounded = true;
             ignoreForGroundCheck = ~(1 << 8 | 1 << 11);
-
-            // customize
-            capsuleCollider = GetComponent<CapsuleCollider>();
         }
 
         #region Movement
@@ -135,7 +128,7 @@ namespace StonesGaming
         {
             playerManager.isGrounded = false;
             RaycastHit hit;
-            Vector3 origin = myTransform.position - new Vector3(0, 0, 0.2f);
+            Vector3 origin = myTransform.position;
             origin.y += groundDetectionRayStartPoint;
 
             if (Physics.Raycast(origin, myTransform.forward, out hit, 0.4f))
@@ -161,7 +154,6 @@ namespace StonesGaming
                 normalVector = hit.normal;
                 Vector3 tp = hit.point;
                 playerManager.isGrounded = true;
-                capsuleCollider.radius = 0.2f; // customize
                 targetPosition.y = tp.y; // Keeps the player on the ground even though the capsule collider does not touch the floor's mesh collider
 
                 if (playerManager.isInAir)
@@ -192,7 +184,6 @@ namespace StonesGaming
                     if (playerManager.isInteracting == false)
                     {
                         animatorHandler.PlayTargetAnimation("Falling", true);
-                        capsuleCollider.radius = 0; // customize
                     }
 
                     Vector3 velocity = rigidbody.velocity;

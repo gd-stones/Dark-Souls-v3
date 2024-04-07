@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace StonesGaming
@@ -7,7 +5,6 @@ namespace StonesGaming
     public class PlayerInventory : MonoBehaviour
     {
         WeaponSlotManager weaponSlotManager;
-
         public WeaponItem rightWeapon;
         public WeaponItem leftWeapon;
 
