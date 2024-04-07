@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Axe
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 0}
-  itemName: 
+  itemName: Axe Viking
   modelPrefab: {fileID: 0}
   isUnarmed: 0
