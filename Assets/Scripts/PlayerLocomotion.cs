@@ -22,6 +22,7 @@ namespace StonesGaming
 
         [Header("Movement Stats")]
         [SerializeField] float movementSpeed = 5;
+        [SerializeField] float walkingSpeed = 6;
         [SerializeField] float sprintSpeed = 7;
         [SerializeField] float rotationSpeed = 8.5f;
         [SerializeField] float fallingSpeed = 45;
@@ -77,7 +78,7 @@ namespace StonesGaming
             moveDirection.y = 0;
 
             float speed = movementSpeed;
-            if (inputHandler.sprintFlag)
+            if (inputHandler.sprintFlag && inputHandler.moveAmount > 0.5f)
             {
                 speed = sprintSpeed;
                 playerManager.isSprinting = true;
@@ -85,7 +86,16 @@ namespace StonesGaming
             }
             else
             {
-                moveDirection *= speed;
+                if (inputHandler.moveAmount < 0.5f)
+                {
+                    moveDirection *= walkingSpeed;
+                }
+                else
+                {
+                    moveDirection *= speed;
+                }
+
+                playerManager.isSprinting = false;
             }
 
             Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);

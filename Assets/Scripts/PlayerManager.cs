@@ -44,6 +44,7 @@ namespace StonesGaming
 
             isInteracting = anim.GetBool("isInteracting");
             inputHandler.TickInput(delta);
+
             playerLocomotion.HandleMovement(delta);
             playerLocomotion.HandleRollingAndSprinting(delta);
             playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
@@ -53,7 +54,8 @@ namespace StonesGaming
         {
             inputHandler.rollFlag = false;
             inputHandler.sprintFlag = false;
-            isSprinting = inputHandler.b_Input;
+            inputHandler.rb_Input = false;
+            inputHandler.rt_Input = false;
 
             if (isInAir)
             {
