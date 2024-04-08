@@ -148,7 +148,7 @@ namespace StonesGaming
 
             if (playerManager.isInAir)
             {
-                rigidbody.AddForce(-Vector3.up * fallingSpeed);
+                rigidbody.AddForce(new Vector3(0, -1, 0.4f) * fallingSpeed);
                 rigidbody.AddForce(-Vector3.up * additionalFallingAcceleration * inAirTimer); // Additional force that increases with time in the air to simulate faster falling.
                 rigidbody.AddForce(moveDirection * fallingSpeed / 10f);
             }
