@@ -84,7 +84,7 @@ namespace StonesGaming
 
         public void PlayTargetAnimation(string targerAnim, bool isInteracting)
         {
-            //anim.applyRootMotion = isInteracting;
+            anim.applyRootMotion = isInteracting;
             anim.SetBool("isInteracting", isInteracting);
             anim.CrossFade(targerAnim, 0.2f);
         }
