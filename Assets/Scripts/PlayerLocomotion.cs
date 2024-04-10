@@ -175,7 +175,7 @@ namespace StonesGaming
                     }
                     else
                     {
-                        animatorHandler.PlayTargetAnimation("Locomotion", false);
+                        animatorHandler.PlayTargetAnimation("Empty", false);
                     }
 
                     inAirTimer = 0;

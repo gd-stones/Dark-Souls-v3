@@ -13071,7 +13071,7 @@ MonoBehaviour:
   movementSpeed: 5
   walkingSpeed: 6
   sprintSpeed: 10
-  rotationSpeed: 8.5
+  rotationSpeed: 7
   fallingSpeed: 18
   additionalFallingAcceleration: 20
 --- !u!114 &559796933
@@ -13569,7 +13569,7 @@ MonoBehaviour:
   targetTransform: {fileID: 559796928}
   cameraTransform: {fileID: 963194228}
   cameraPivotTransform: {fileID: 653542207}
-  lookSpeed: 0.1
+  lookSpeed: 0.04
   followSpeed: 0.1
   pivotSpeed: 0.03
   minimumPivot: -35
@@ -17772,6 +17772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f637e34e8642348b8626db52cbe2fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 25
 --- !u!4 &8182246803847195406
 Transform:
   m_ObjectHideFlags: 0
