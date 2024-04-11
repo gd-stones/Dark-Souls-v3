@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 0}
   itemName: Axe Viking
-  modelPrefab: {fileID: 0}
+  modelPrefab: {fileID: 7815216350567740539, guid: 636a8e6182543e747a3ab7c58451a72b, type: 3}
   isUnarmed: 0
+  OH_Light_Attack_1: OH_Light_Attack_01
+  OH_Heavy_Attack_1: OH_Heavy_Attack_01
