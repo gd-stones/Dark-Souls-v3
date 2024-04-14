@@ -15,7 +15,7 @@ namespace StonesGaming
         public bool isInAir;
         public bool isGrounded;
 
-        private void Awake()
+        void Awake()
         {
             cameraHandler = FindObjectOfType<CameraHandler>();
         }
@@ -27,7 +27,7 @@ namespace StonesGaming
             playerLocomotion = GetComponent<PlayerLocomotion>();
         }
 
-        private void FixedUpdate()
+        void FixedUpdate()
         {
             float delta = Time.fixedDeltaTime;
 
@@ -50,7 +50,7 @@ namespace StonesGaming
             playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
         }
 
-        private void LateUpdate()
+        void LateUpdate()
         {
             inputHandler.rollFlag = false;
             inputHandler.sprintFlag = false;

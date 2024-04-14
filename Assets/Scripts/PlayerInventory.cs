@@ -8,12 +8,12 @@ namespace StonesGaming
         public WeaponItem rightWeapon;
         public WeaponItem leftWeapon;
 
-         void Awake()
+        void Awake()
         {
             weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
         }
 
-         void Start()
+        void Start()
         {
             weaponSlotManager.LoadWeaponOnSlot(rightWeapon, false);
             weaponSlotManager.LoadWeaponOnSlot(leftWeapon, true);

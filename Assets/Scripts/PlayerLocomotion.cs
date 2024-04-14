@@ -45,7 +45,7 @@ namespace StonesGaming
         Vector3 normalVector;
         Vector3 targetPosition;
 
-        private void HandleRotation(float delta)
+        void HandleRotation(float delta)
         {
             Vector3 targetDir = Vector3.zero;
             float moveOverride = inputHandler.moveAmount;

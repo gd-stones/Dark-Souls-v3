@@ -99,7 +99,7 @@ namespace StonesGaming
             canRotate = false;
         }
 
-         void OnAnimatorMove()
+        void OnAnimatorMove()
         {
             if (playerManager.isInteracting == false)
                 return;
