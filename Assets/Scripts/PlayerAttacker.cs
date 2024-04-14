@@ -20,23 +20,23 @@ namespace StonesGaming
             {
                 animatorHandler.anim.SetBool("canDoCombo", false);
 
-                if (lastAttack == weapon.OH_Sword_Attack_1)
+                if (lastAttack == weapon.oh_light_attack_01)
                 {
-                    animatorHandler.PlayTargetAnimation(weapon.OH_Sword_Attack_2, true);
+                    animatorHandler.PlayTargetAnimation(weapon.oh_light_attack_02, true);
                 }
             }
         }
 
         public void HandleLightAttack(WeaponItem weapon)
         {
-            animatorHandler.PlayTargetAnimation(weapon.OH_Sword_Attack_1, true);
-            lastAttack = weapon.OH_Sword_Attack_1;
+            animatorHandler.PlayTargetAnimation(weapon.oh_light_attack_01, true);
+            lastAttack = weapon.oh_light_attack_01;
         }
 
         public void HandleHeavyAttack(WeaponItem weapon)
         {
-            animatorHandler.PlayTargetAnimation(weapon.OH_Sword_Attack_2, true);
-            lastAttack = weapon.OH_Sword_Attack_2;
+            animatorHandler.PlayTargetAnimation(weapon.oh_light_attack_02, true);
+            lastAttack = weapon.oh_light_attack_02;
         }
     }
 }
