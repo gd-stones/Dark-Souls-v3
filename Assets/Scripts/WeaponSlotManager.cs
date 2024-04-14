@@ -10,7 +10,7 @@ namespace StonesGaming
         DamageCollider leftHandDamageCollider;
         DamageCollider rightHandDamageCollider;
 
-        private void Awake()
+        void Awake()
         {
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
             foreach (WeaponHolderSlot weaponSlot in weaponHolderSlots)
@@ -64,7 +64,7 @@ namespace StonesGaming
         public void CloseRightDamageCollider()
         {
             rightHandDamageCollider.DisableDamageCollider();
-        }    
+        }
 
         public void CloseLeftDamageCollider()
         {

@@ -15,13 +15,13 @@ namespace StonesGaming
             animator = GetComponentInChildren<Animator>();
         }
 
-        private void Start()
+         void Start()
         {
             maxHealth = SetMaxHealthFromHeatlthLevel();
             currentHealth = maxHealth;
         }
 
-        private int SetMaxHealthFromHeatlthLevel()
+         int SetMaxHealthFromHeatlthLevel()
         {
             maxHealth = healthLevel * 10;
             return maxHealth;

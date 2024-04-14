@@ -6,7 +6,7 @@ namespace StonesGaming
     {
         AnimatorHandler animatorHandler;
 
-        private void Awake()
+        void Awake()
         {
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
         }

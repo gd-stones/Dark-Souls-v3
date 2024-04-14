@@ -9,19 +9,19 @@ namespace StonesGaming
         public Transform targetTransform;
         public Transform cameraTransform;
         public Transform cameraPivotTransform;
-        private Transform myTransform;
-        private Vector3 cameraTransformPosition;
-        private LayerMask ignoreLayers;
-        private Vector3 cameraFollowVelocity = Vector3.zero;
+         Transform myTransform;
+         Vector3 cameraTransformPosition;
+         LayerMask ignoreLayers;
+         Vector3 cameraFollowVelocity = Vector3.zero;
         
         public float lookSpeed = 0.05f;
         public float followSpeed = 0.1f;
         public float pivotSpeed = 0.03f;
 
-        private float targetPosition;
-        private float defaultPosition;
-        private float lookAngle;
-        private float pivotAngle;
+         float targetPosition;
+         float defaultPosition;
+         float lookAngle;
+         float pivotAngle;
         public float minimumPivot = -35f;
         public float maximumPivot = 35f;
 
@@ -29,7 +29,7 @@ namespace StonesGaming
         public float cameraCollisionOffset = 0.2f;
         public float minimumCollisionOffset = 0.2f;
 
-        private void Awake()
+         void Awake()
         {
             if (singleton != null)
             {
@@ -71,7 +71,7 @@ namespace StonesGaming
             cameraPivotTransform.localRotation = targetRotation;
         }
 
-        private void HandleCameraCollisions(float delta)
+         void HandleCameraCollisions(float delta)
         {
             targetPosition = defaultPosition;
             RaycastHit hit;

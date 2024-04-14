@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="StonesGaming.AnimatorHandler">
+    <Position X="11" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAQAEAAAQAAAQEAAAAAAAAAAAACAAAAMQGAAAAAAAE=</HashCode>
+      <FileName>Assets\Scripts\AnimatorHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StonesGaming.CameraHandler">
+    <Position X="2.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AABAEAAAEIqCAAAAAIABAAAAgQAIgBwBAAAUAQAAAEA=</HashCode>
+      <FileName>Assets\Scripts\CameraHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StonesGaming.DamageCollider">
+    <Position X="5.25" Y="10.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAJAAEAAAAAAAAAAAAAAAAAAAAAAAAQABAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\DamageCollider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StonesGaming.DamagePlayer">
+    <Position X="10.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DamagePlayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StonesGaming.EnemyStats">
+    <Position X="12.5" Y="7.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAJACAAAAAAAAAAAAAAAAAEAAAAAAAAggAAAEA=</HashCode>
+      <FileName>Assets\Scripts\EnemyStats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StonesGaming.HealthBar">
+    <Position X="8.25" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAEAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\HealthBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StonesGaming.InputHandler">
+    <Position X="5.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAESAAgAQQBQAAABAAUAAAAAiAAAIAEgABCAACkg=</HashCode>
+      <FileName>Assets\Scripts\InputHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StonesGaming.Item">
+    <Position X="0.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StonesGaming.PlayerAttacker">
+    <Position X="0.5" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAQAAAAAAAAAACAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\PlayerAttacker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StonesGaming.PlayerInventory">
+    <Position X="5.75" Y="7.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAgAAJAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\PlayerInventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StonesGaming.PlayerLocomotion">
+    <Position X="7.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAIEBQEACACAAIEAACQAQCAhAAAEABIEAFAgCAAAAE=</HashCode>
+      <FileName>Assets\Scripts\PlayerLocomotion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StonesGaming.PlayerManager">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAIAAAAiAAAAAAAAAAIAAAAgAAAAAYAQkAAAAAAEE=</HashCode>
+      <FileName>Assets\Scripts\PlayerManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StonesGaming.PlayerStats">
+    <Position X="2.75" Y="7.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAANACAAAAAAAAAAAAAAAAAEAAAAAAAAggAQAEA=</HashCode>
+      <FileName>Assets\Scripts\PlayerStats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StonesGaming.WeaponHolderSlot">
+    <Position X="2.5" Y="10.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAASAAAAABAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\WeaponHolderSlot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StonesGaming.WeaponItem">
+    <Position X="0.5" Y="13" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAgAAAAQAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\WeaponItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StonesGaming.WeaponSlotManager">
+    <Position X="7.75" Y="10.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AEgAAAAAAAAIAAAQAAAACAAEAAAYAAAAIACAAAAAAkA=</HashCode>
+      <FileName>Assets\Scripts\WeaponSlotManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResetAnimatorBool">
+    <Position X="10.75" Y="10.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ResetAnimatorBool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

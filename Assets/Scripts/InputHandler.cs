@@ -25,7 +25,7 @@ namespace StonesGaming
         Vector2 movementInput;
         Vector2 cameraInput;
 
-        private void Awake()
+        void Awake()
         {
             playerAttacker = GetComponent<PlayerAttacker>();
             playerInventory = GetComponent<PlayerInventory>();
@@ -43,7 +43,7 @@ namespace StonesGaming
             inputActions.Enable();
         }
 
-        private void OnDisable()
+        void OnDisable()
         {
             inputActions.Disable();
         }
@@ -55,7 +55,7 @@ namespace StonesGaming
             HandleAttackInput(delta);
         }
 
-        private void MoveInput(float delta)
+        void MoveInput(float delta)
         {
             horizontal = movementInput.x;
             vertical = movementInput.y;
@@ -64,7 +64,7 @@ namespace StonesGaming
             mouseY = cameraInput.y;
         }
 
-        private void HandleRollInput(float delta)
+        void HandleRollInput(float delta)
         {
             b_Input = inputActions.PlayerActions.Roll.phase == UnityEngine.InputSystem.InputActionPhase.Performed;
             //b_Input = inputActions.PlayerActions.Roll.phase == UnityEngine.InputSystem.InputActionPhase.Started;
@@ -86,7 +86,7 @@ namespace StonesGaming
             }
         }
 
-        private void HandleAttackInput(float delta)
+        void HandleAttackInput(float delta)
         {
             inputActions.PlayerActions.RB.performed += i => rb_Input = true;
             inputActions.PlayerActions.RT.performed += i => rt_Input = true;
@@ -98,8 +98,8 @@ namespace StonesGaming
 
             if (rt_Input)
             {
-                playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
-            }   
+                playerAttacker.HandleHeavyAttack(playerInventory.leftWeapon);
+            }
         }
     }
 }

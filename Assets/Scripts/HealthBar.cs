@@ -7,7 +7,7 @@ namespace StonesGaming
     {
         public Slider slider;
 
-        private void Start()
+         void Start()
         {
             slider = GetComponent<Slider>();
         }
