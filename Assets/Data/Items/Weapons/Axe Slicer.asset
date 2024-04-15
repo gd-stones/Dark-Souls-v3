@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c325840c650fb748922c8efe76f70ca, type: 3}
   m_Name: Axe Slicer
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: ea4810869629b65439715f50a155c308, type: 3}
   itemName: Axe Slicer
   modelPrefab: {fileID: 6486412180551207147, guid: ad63e43598b6c44478a1a9d244d305c4, type: 3}
   isUnarmed: 0
