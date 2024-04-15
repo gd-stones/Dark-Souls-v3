@@ -16,7 +16,7 @@ namespace StonesGaming
 
         public void HandleWeaponCombo(WeaponItem weapon)
         {
-            if (inputHandler.comboFlag)
+            if (!weapon.isUnarmed && inputHandler.comboFlag)
             {
                 animatorHandler.anim.SetBool("canDoCombo", false);
 
@@ -29,14 +29,20 @@ namespace StonesGaming
 
         public void HandleLightAttack(WeaponItem weapon)
         {
-            animatorHandler.PlayTargetAnimation(weapon.oh_light_attack_01, true);
-            lastAttack = weapon.oh_light_attack_01;
+            if (!weapon.isUnarmed)
+            {
+                animatorHandler.PlayTargetAnimation(weapon.oh_light_attack_01, true);
+                lastAttack = weapon.oh_light_attack_01;
+            }
         }
 
         public void HandleHeavyAttack(WeaponItem weapon)
         {
-            animatorHandler.PlayTargetAnimation(weapon.oh_light_attack_02, true);
-            lastAttack = weapon.oh_light_attack_02;
+            if (!weapon.isUnarmed)
+            {
+                animatorHandler.PlayTargetAnimation(weapon.oh_light_attack_02, true);
+                lastAttack = weapon.oh_light_attack_02;
+            }
         }
     }
 }

@@ -6,7 +6,6 @@ namespace StonesGaming
     {
         PlayerManager playerManager;
         public Animator anim;
-        InputHandler inputHandler;
         PlayerLocomotion playerLocomotion;
         int vertical;
         int horizontal;
@@ -16,7 +15,6 @@ namespace StonesGaming
         {
             playerManager = GetComponentInParent<PlayerManager>();
             anim = GetComponent<Animator>();
-            inputHandler = GetComponentInParent<InputHandler>();
             playerLocomotion = GetComponentInParent<PlayerLocomotion>();
             vertical = Animator.StringToHash("Vertical");
             horizontal = Animator.StringToHash("Horizontal");
