@@ -12,28 +12,28 @@ namespace StonesGaming
         {
             if (isLeft == false)
             {
-                if (rightWeaponItem != null)
+                rightWeaponItem.sprite = weapon.itemIcon;
+
+                if (rightWeaponItem.sprite != null)
                 {
-                    rightWeaponItem.sprite = weapon.itemIcon;
                     rightWeaponItem.enabled = true;
                 }
                 else
                 {
-                    rightWeaponItem.sprite = null;
                     rightWeaponItem.enabled = false;
                 }
             }
             else
             {
-                if (leftWeaponItem != null)
+                leftWeaponItem.sprite = weapon.itemIcon;
+
+                if (leftWeaponItem.sprite != null)
                 {
-                    leftWeaponItem.sprite = weapon.itemIcon;
                     leftWeaponItem.enabled = true;
                 }
                 else
                 {
-                    leftWeaponItem.sprite = null;
-                    leftWeaponItem.enabled = true;
+                    leftWeaponItem.enabled = false;
                 }
             }
         }

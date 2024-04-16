@@ -1696,7 +1696,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7481332405210102412}
   m_Layer: 0
-  m_Name: griffin
+  m_Name: Griffin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

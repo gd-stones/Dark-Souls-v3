@@ -3128,7 +3128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8841059161929019712}
   m_Layer: 0
-  m_Name: deadpool
+  m_Name: Deadpool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
