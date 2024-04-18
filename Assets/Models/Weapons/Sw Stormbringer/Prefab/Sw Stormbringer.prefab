@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2500458495798649981}
   - component: {fileID: 8183006070002964612}
   m_Layer: 0
-  m_Name: Sword_Stormbringer_00_FREE
+  m_Name: Sw Stormbringer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23201662184793146}
   - component: {fileID: 64187149486157828}
   m_Layer: 0
-  m_Name: Dragonblade
+  m_Name: Sw Dragon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
