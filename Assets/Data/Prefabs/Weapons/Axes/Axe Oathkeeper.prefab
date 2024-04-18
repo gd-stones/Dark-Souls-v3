@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4566576628813133153
+--- !u!1 &4360203318455110725
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3643260227730448236}
-  - component: {fileID: 1178384354975884228}
-  - component: {fileID: 2224661052311518264}
+  - component: {fileID: 7141653151649415694}
+  - component: {fileID: 2726976276868208547}
+  - component: {fileID: 5136057665811732328}
   m_Layer: 0
-  m_Name: Sword_Stormbringer_00_FREE
+  m_Name: Axe Oathkeeper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3643260227730448236
+--- !u!4 &7141653151649415694
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4566576628813133153}
+  m_GameObject: {fileID: 4360203318455110725}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.26212788, y: 0.542, z: 0.73649144}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -16.941751, y: 2.08, z: 33.601143}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1178384354975884228
+--- !u!33 &2726976276868208547
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4566576628813133153}
-  m_Mesh: {fileID: 3604920064263545918, guid: 9eee953c6542aa240994fd186ee96443, type: 3}
---- !u!23 &2224661052311518264
+  m_GameObject: {fileID: 4360203318455110725}
+  m_Mesh: {fileID: 808140171487132286, guid: e1b25a1fdda2e6945be2526516cca76e, type: 3}
+--- !u!23 &5136057665811732328
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4566576628813133153}
+  m_GameObject: {fileID: 4360203318455110725}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b54a701be12533e41a893acd3c380cb4, type: 2}
+  - {fileID: 2100000, guid: dbf58fa7cb626094e945069ea9103e2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

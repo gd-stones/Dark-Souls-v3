@@ -508,7 +508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4370730117529445618}
   m_Layer: 0
-  m_Name: VikingWeapon
+  m_Name: Axe Sh Viking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

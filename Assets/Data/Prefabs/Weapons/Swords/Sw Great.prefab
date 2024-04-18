@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6331748799488856840}
   - component: {fileID: 3344248776755101590}
   m_Layer: 0
-  m_Name: great3
+  m_Name: Sw Great
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

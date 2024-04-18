@@ -7323,7 +7323,7 @@ GameObject:
   - component: {fileID: 8173688002333439843}
   - component: {fileID: 4760623087919130626}
   m_Layer: 10
-  m_Name: Actor Handle
+  m_Name: Knight
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

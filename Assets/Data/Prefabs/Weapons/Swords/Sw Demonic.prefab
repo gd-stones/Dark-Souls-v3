@@ -244,7 +244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4397669781424740039}
   m_Layer: 0
-  m_Name: DemonicSword
+  m_Name: Sw Demonic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

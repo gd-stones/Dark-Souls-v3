@@ -1849,7 +1849,7 @@ GameObject:
   - component: {fileID: 3544250537397379103}
   - component: {fileID: 3544250537397379102}
   m_Layer: 11
-  m_Name: Enemy Handle
+  m_Name: Villain Knight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

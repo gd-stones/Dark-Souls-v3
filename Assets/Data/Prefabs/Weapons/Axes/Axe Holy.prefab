@@ -425,7 +425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3737761324863117627}
   m_Layer: 0
-  m_Name: HolyAxe_low
+  m_Name: Axe Holy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
