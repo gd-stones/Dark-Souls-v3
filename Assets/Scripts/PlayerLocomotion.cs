@@ -7,11 +7,11 @@ namespace StonesGaming
         PlayerManager playerManager;
         Transform cameraObject;
         InputHandler inputHandler;
-        public Vector3 moveDirection;
         [HideInInspector] public Transform myTransform;
         [HideInInspector] public AnimatorHandler animatorHandler;
         public new Rigidbody rigidbody;
         public GameObject normalCamera;
+        public Vector3 moveDirection;
 
         [Header("Ground & Air Detection Stats")]
         [SerializeField] float groundDetectionRayStartPoint = 0.5f;
@@ -212,6 +212,25 @@ namespace StonesGaming
                 else
                 {
                     myTransform.position = targetPosition;
+                }
+            }
+        }
+
+        public void HandleJumping()
+        {
+            if (playerManager.isInteracting)
+                return; 
+
+            if (inputHandler.jump_Input)
+            {
+                if (inputHandler.moveAmount > 0 )
+                {
+                    moveDirection = cameraObject.forward * inputHandler.vertical;
+                    moveDirection += cameraObject.right * inputHandler.horizontal;
+                    animatorHandler.PlayTargetAnimation("Jump", true);
+                    moveDirection.y = 0;
+                    Quaternion jumpRotation = Quaternion.LookRotation(moveDirection);
+                    myTransform.rotation = jumpRotation;
                 }
             }
         }

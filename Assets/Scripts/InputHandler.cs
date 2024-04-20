@@ -14,6 +14,8 @@ namespace StonesGaming
         public bool a_Input;
         public bool rb_Input;
         public bool rt_Input;
+        public bool jump_Input;
+
         public bool d_Pad_Up;
         public bool d_Pad_Down;
         public bool d_Pad_Left;
@@ -51,6 +53,11 @@ namespace StonesGaming
             inputActions.Enable();
         }
 
+         void LateUpdate()
+        {
+            
+        }
+
         void OnDisable()
         {
             inputActions.Disable();
@@ -63,6 +70,7 @@ namespace StonesGaming
             HandleAttackInput(delta);
             HandleQuickSlotsInput();
             HandleInteractingButtonInput();
+            HandleJumpInput();
         }
 
         void MoveInput(float delta)
@@ -151,6 +159,11 @@ namespace StonesGaming
         {
             inputActions.PlayerActions.A.performed += i => a_Input = true;
             //inputActions.PlayerActions.A.canceled += i => a_Input = false;
+        }
+
+        void HandleJumpInput()
+        {
+            inputActions.PlayerActions.Jump.performed += i => jump_Input = true;
         }
     }
 }
