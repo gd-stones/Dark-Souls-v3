@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace StonesGaming
@@ -15,6 +16,8 @@ namespace StonesGaming
 
         public int currentRightWeaponIndex = -1;
         public int currentLeftWeaponIndex = -1;
+
+        public List<WeaponItem> weaponsInventory;
 
         void Awake()
         {

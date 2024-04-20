@@ -11,6 +11,7 @@ namespace StonesGaming
         public float mouseY;
 
         public bool b_Input;
+        public bool a_Input;
         public bool rb_Input;
         public bool rt_Input;
         public bool d_Pad_Up;
@@ -61,6 +62,7 @@ namespace StonesGaming
             HandleRollInput(delta);
             HandleAttackInput(delta);
             HandleQuickSlotsInput();
+            HandleInteractingButtonInput();
         }
 
         void MoveInput(float delta)
@@ -137,6 +139,11 @@ namespace StonesGaming
             {
                 playerInventory.ChangeLeftWeapon();
             }
+        }
+
+        void HandleInteractingButtonInput()
+        {
+            inputActions.PlayerActions.A.performed += i => a_Input = true;
         }
     }
 }

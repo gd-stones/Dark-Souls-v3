@@ -15,7 +15,6 @@ namespace StonesGaming
         Animator animator;
 
         QuickSlotsUI quickSlotsUI;
-
         PlayerStats playerStats;
 
         void Awake()

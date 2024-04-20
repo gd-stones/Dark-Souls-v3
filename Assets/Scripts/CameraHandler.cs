@@ -11,7 +11,7 @@ namespace StonesGaming
         public Transform cameraPivotTransform;
         Transform myTransform;
         Vector3 cameraTransformPosition;
-        LayerMask ignoreLayers;
+        public LayerMask ignoreLayers;
         Vector3 cameraFollowVelocity = Vector3.zero;
 
         public float lookSpeed = 0.05f;
