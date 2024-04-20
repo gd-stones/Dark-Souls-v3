@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using static UnityEngine.UI.Image;
 
@@ -9,6 +10,10 @@ namespace StonesGaming
         Animator anim;
         CameraHandler cameraHandler;
         PlayerLocomotion playerLocomotion;
+
+        InteractableUI interactableUI;
+        public GameObject interactableUIGameObject;
+        public GameObject itemInteractableGameObject;
 
         public bool isInteracting;
         [Header("Player Flags")]
@@ -27,6 +32,7 @@ namespace StonesGaming
             inputHandler = GetComponent<InputHandler>();
             anim = GetComponentInChildren<Animator>();
             playerLocomotion = GetComponent<PlayerLocomotion>();
+            interactableUI = FindObjectOfType<InteractableUI>();
         }
 
         void FixedUpdate()
@@ -52,21 +58,13 @@ namespace StonesGaming
             playerLocomotion.HandleMovement(delta);
             playerLocomotion.HandleRollingAndSprinting(delta);
             playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
-            
+
             CheckForInteractableObject();
         }
 
         void LateUpdate()
         {
-            inputHandler.rollFlag = false;
-            inputHandler.sprintFlag = false;
-            /* inputHandler.rb_Input = false;
-            inputHandler.rt_Input = false;
-            inputHandler.a_Input = false; */
-            inputHandler.d_Pad_Up = false;
-            inputHandler.d_Pad_Down = false;
-            inputHandler.d_Pad_Left = false;
-            inputHandler.d_Pad_Right = false;
+            ResetFlags();
 
             if (isInAir)
             {
@@ -87,14 +85,41 @@ namespace StonesGaming
                     if (interactableObject != null)
                     {
                         string interactableText = interactableObject.interactableText;
-                    }
+                        interactableUI.interactableText.text = interactableText;
+                        interactableUIGameObject.SetActive(true);
 
-                    if (inputHandler.a_Input)
-                    {
-                        hit.collider.GetComponent<Interactable>().Interact(this);
+                        if (inputHandler.a_Input)
+                        {
+                            hit.collider.GetComponent<Interactable>().Interact(this);
+                        }
                     }
                 }
             }
+            else
+            {
+                if (interactableUIGameObject != null)
+                {
+                    interactableUIGameObject.SetActive(false);
+                }
+
+                if (itemInteractableGameObject != null && inputHandler.a_Input)
+                {
+                    itemInteractableGameObject.SetActive(false);
+                }
+            }
+        }
+
+        void ResetFlags()
+        {
+            inputHandler.rollFlag = false;
+            inputHandler.sprintFlag = false;
+            inputHandler.rb_Input = false;
+            inputHandler.rt_Input = false;
+            inputHandler.a_Input = false;
+            inputHandler.d_Pad_Up = false;
+            inputHandler.d_Pad_Down = false;
+            inputHandler.d_Pad_Left = false;
+            inputHandler.d_Pad_Right = false;
         }
     }
 }
