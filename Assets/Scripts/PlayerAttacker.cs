@@ -6,11 +6,13 @@ namespace StonesGaming
     {
         AnimatorHandler animatorHandler;
         InputHandler inputHandler;
+        WeaponSlotManager weaponSlotManager;
         public string lastAttack;
 
         void Awake()
         {
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
+            weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
             inputHandler = GetComponent<InputHandler>();
         }
 
@@ -31,6 +33,7 @@ namespace StonesGaming
         {
             if (!weapon.isUnarmed)
             {
+                weaponSlotManager.attackingWeapon = weapon;
                 animatorHandler.PlayTargetAnimation(weapon.oh_light_attack_01, true);
                 lastAttack = weapon.oh_light_attack_01;
             }
@@ -40,6 +43,7 @@ namespace StonesGaming
         {
             if (!weapon.isUnarmed)
             {
+                weaponSlotManager.attackingWeapon = weapon;
                 animatorHandler.PlayTargetAnimation(weapon.oh_light_attack_02, true);
                 lastAttack = weapon.oh_light_attack_02;
             }

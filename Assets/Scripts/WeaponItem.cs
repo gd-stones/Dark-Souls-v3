@@ -15,5 +15,10 @@ namespace StonesGaming
         [Header("Attack Animations")]
         public string oh_light_attack_01;
         public string oh_light_attack_02;
+
+        [Header("Stamina Costs")]
+        public int baseStamina;
+        public float lightAttackMultiplier;
+        public float heavyAttackMultiplier;
     }
 }

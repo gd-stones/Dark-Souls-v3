@@ -10,7 +10,6 @@ namespace StonesGaming
         void Start()
         {
             slider = GetComponent<Slider>();
-            slider = GetComponent<Slider>();
         }
 
         public void SetMaxHealth(float maxHealth)

@@ -8,25 +8,40 @@ namespace StonesGaming
         public int maxHealth;
         public int currentHealth;
 
+        public int staminaLevel = 10;
+        public int maxStamina;
+        public int currentStamina;
+
         public HealthBar healthBar;
+        public StaminaBar staminaBar;
         AnimatorHandler animatorHandler;
 
-        void Awake ()
+        void Awake()
         {
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
         }
 
-        private void Start()
+        void Start()
         {
             maxHealth = SetMaxHealthFromHeatlthLevel();
             currentHealth = maxHealth;
             healthBar.SetMaxHealth(maxHealth);
+
+            maxStamina = SetMaxStaminaFromStaminaLevel();
+            currentStamina = maxStamina;
+            staminaBar.SetMaxStamina(maxStamina);
         }
 
-        private int SetMaxHealthFromHeatlthLevel()
+        int SetMaxHealthFromHeatlthLevel()
         {
             maxHealth = healthLevel * 10;
             return maxHealth;
+        }
+
+        int SetMaxStaminaFromStaminaLevel()
+        {
+            maxStamina = staminaLevel * 10;
+            return maxStamina;
         }
 
         public void TakeDamage(int damage)
@@ -40,6 +55,12 @@ namespace StonesGaming
                 currentHealth = 0;
                 animatorHandler.PlayTargetAnimation("Dead_01", true);
             }
+        }
+
+        public void TakeStaminaDamage(int damage)
+        {
+            currentStamina -= damage;
+            staminaBar.SetCurrentStamina(currentStamina);
         }
     }
 }
