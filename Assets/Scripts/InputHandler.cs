@@ -99,7 +99,10 @@ namespace StonesGaming
         void HandleAttackInput(float delta)
         {
             inputActions.PlayerActions.RB.performed += i => rb_Input = true;
+            inputActions.PlayerActions.RB.canceled += i => rb_Input = false;
+            
             inputActions.PlayerActions.RT.performed += i => rt_Input = true;
+            inputActions.PlayerActions.RT.canceled += i => rt_Input = false;
 
             if (rb_Input)
             {
@@ -129,7 +132,10 @@ namespace StonesGaming
         void HandleQuickSlotsInput()
         {
             inputActions.PlayerQuickSlots.DPadRight.performed += i => d_Pad_Right = true;
+            //inputActions.PlayerQuickSlots.DPadRight.canceled += i => d_Pad_Right = false;
+
             inputActions.PlayerQuickSlots.DPadLeft.performed += i => d_Pad_Left = true;
+            //inputActions.PlayerQuickSlots.DPadLeft.canceled += i => d_Pad_Left = false;
 
             if (d_Pad_Right)
             {
@@ -144,6 +150,7 @@ namespace StonesGaming
         void HandleInteractingButtonInput()
         {
             inputActions.PlayerActions.A.performed += i => a_Input = true;
+            inputActions.PlayerActions.A.canceled += i => a_Input = false;
         }
     }
 }
