@@ -15,6 +15,7 @@ namespace StonesGaming
         public bool rb_Input;
         public bool rt_Input;
         public bool jump_Input;
+        public bool inventory_Input;
 
         public bool d_Pad_Up;
         public bool d_Pad_Down;
@@ -25,11 +26,13 @@ namespace StonesGaming
         public bool sprintFlag;
         public bool comboFlag;
         public float rollInputTimer;
+        public bool inventoryFlag;
 
         PlayerControls inputActions;
         PlayerAttacker playerAttacker;
         PlayerInventory playerInventory;
         PlayerManager playerManager;
+        UIManager uiManager;
 
         Vector2 movementInput;
         Vector2 cameraInput;
@@ -39,6 +42,7 @@ namespace StonesGaming
             playerAttacker = GetComponent<PlayerAttacker>();
             playerInventory = GetComponent<PlayerInventory>();
             playerManager = GetComponent<PlayerManager>();
+            uiManager = FindObjectOfType<UIManager>();
         }
 
         public void OnEnable()
@@ -59,7 +63,8 @@ namespace StonesGaming
             inputActions.PlayerActions.Jump.canceled += i => jump_Input = false;
             inputActions.PlayerActions.RB.canceled += i => rb_Input = false;
             inputActions.PlayerActions.RT.canceled += i => rt_Input = false;
-            
+            inputActions.PlayerActions.Inventory.canceled += i => inventory_Input = false;
+
             //inputActions.PlayerQuickSlots.DPadRight.canceled += i => d_Pad_Right = false;
             //inputActions.PlayerQuickSlots.DPadLeft.canceled += i => d_Pad_Left = false;
         }
@@ -77,6 +82,7 @@ namespace StonesGaming
             HandleQuickSlotsInput();
             HandleInteractingButtonInput();
             HandleJumpInput();
+            HandleInventoryInput();
         }
 
         void MoveInput(float delta)
@@ -162,6 +168,24 @@ namespace StonesGaming
         void HandleJumpInput()
         {
             inputActions.PlayerActions.Jump.performed += i => jump_Input = true;
+        }
+
+        void HandleInventoryInput()
+        {
+            inputActions.PlayerActions.Inventory.performed += i => inventory_Input = true;
+
+            if (inventory_Input)
+            {
+                inventoryFlag = !inventoryFlag;
+                if (inventoryFlag)
+                {
+                    uiManager.OpenSelectWindow();
+                }
+                else
+                {
+                    uiManager.CloseSelectWindow();
+                }
+            }
         }
     }
 }
