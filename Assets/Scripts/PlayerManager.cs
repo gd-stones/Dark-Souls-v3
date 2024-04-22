@@ -1,7 +1,4 @@
-using TMPro;
-using Unity.Android.Types;
 using UnityEngine;
-using static UnityEngine.UI.Image;
 
 namespace StonesGaming
 {
@@ -40,11 +37,8 @@ namespace StonesGaming
         {
             float delta = Time.fixedDeltaTime;
 
-            if (cameraHandler != null)
-            {
-                cameraHandler.FollowTarget(delta);
-                cameraHandler.HandleCameraRotation(delta, inputHandler.mouseX, inputHandler.mouseY);
-            }
+            playerLocomotion.HandleMovement(delta);
+            playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
         }
 
         void Update()
@@ -56,10 +50,7 @@ namespace StonesGaming
             anim.SetBool("isInAir", isInAir);
 
             inputHandler.TickInput(delta);
-
-            playerLocomotion.HandleMovement(delta);
             playerLocomotion.HandleRollingAndSprinting(delta);
-            playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
             playerLocomotion.HandleJumping();
 
             CheckForInteractableObject();
@@ -68,6 +59,14 @@ namespace StonesGaming
         void LateUpdate()
         {
             ResetFlags();
+
+            float delta = Time.deltaTime;
+
+            if (cameraHandler != null)
+            {
+                cameraHandler.FollowTarget(delta);
+                cameraHandler.HandleCameraRotation(delta, inputHandler.mouseX, inputHandler.mouseY);
+            }
 
             if (isInAir)
             {
@@ -114,7 +113,7 @@ namespace StonesGaming
 
         void ResetFlags()
         {
-            //inputHandler.rollFlag = false;
+            inputHandler.rollFlag = false;
             //inputHandler.sprintFlag = false;
 
             //inputHandler.rb_Input = false;

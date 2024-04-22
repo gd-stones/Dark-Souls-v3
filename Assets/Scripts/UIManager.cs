@@ -26,7 +26,10 @@ namespace StonesGaming
         void Start()
         {
             weaponInventorySlots = weaponInventorySlotsParent.GetComponentsInChildren<WeaponInventorySlot>();
-            equipmentWindowUI.LoadWeaponsOnEquipmentScreen(playerInventory);
+            if (equipmentWindowUI != null)
+            {
+                equipmentWindowUI.LoadWeaponsOnEquipmentScreen(playerInventory);
+            }
         }
 
         public void UpdateUI()

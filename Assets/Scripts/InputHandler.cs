@@ -52,6 +52,15 @@ namespace StonesGaming
                 inputActions = new PlayerControls();
                 inputActions.PlayerMovement.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
                 inputActions.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
+                
+                inputActions.PlayerActions.RB.performed += i => rb_Input = true;
+                inputActions.PlayerActions.RT.performed += i => rt_Input = true;
+                inputActions.PlayerQuickSlots.DPadRight.performed += i => d_Pad_Right = true;
+                inputActions.PlayerQuickSlots.DPadLeft.performed += i => d_Pad_Left = true;
+
+                inputActions.PlayerActions.A.performed += i => a_Input = true;
+                inputActions.PlayerActions.Jump.performed += i => jump_Input = true;
+                inputActions.PlayerActions.Inventory.performed += i => inventory_Input = true;
             }
 
             inputActions.Enable();
@@ -80,8 +89,6 @@ namespace StonesGaming
             HandleRollInput(delta);
             HandleAttackInput(delta);
             HandleQuickSlotsInput();
-            HandleInteractingButtonInput();
-            HandleJumpInput();
             HandleInventoryInput();
         }
 
@@ -97,11 +104,11 @@ namespace StonesGaming
         void HandleRollInput(float delta)
         {
             b_Input = inputActions.PlayerActions.Roll.phase == UnityEngine.InputSystem.InputActionPhase.Performed;
+            sprintFlag = b_Input;
 
             if (b_Input)
             {
                 rollInputTimer += delta;
-                sprintFlag = true;
             }
             else
             {
@@ -117,9 +124,6 @@ namespace StonesGaming
 
         void HandleAttackInput(float delta)
         {
-            inputActions.PlayerActions.RB.performed += i => rb_Input = true;
-            inputActions.PlayerActions.RT.performed += i => rt_Input = true;
-
             if (rb_Input)
             {
                 if (playerManager.canDoCombo)
@@ -147,9 +151,6 @@ namespace StonesGaming
 
         void HandleQuickSlotsInput()
         {
-            inputActions.PlayerQuickSlots.DPadRight.performed += i => d_Pad_Right = true;
-            inputActions.PlayerQuickSlots.DPadLeft.performed += i => d_Pad_Left = true;
-
             if (d_Pad_Right)
             {
                 playerInventory.ChangeRightWeapon();
@@ -160,20 +161,8 @@ namespace StonesGaming
             }
         }
 
-        void HandleInteractingButtonInput()
-        {
-            inputActions.PlayerActions.A.performed += i => a_Input = true;
-        }
-
-        void HandleJumpInput()
-        {
-            inputActions.PlayerActions.Jump.performed += i => jump_Input = true;
-        }
-
         void HandleInventoryInput()
         {
-            inputActions.PlayerActions.Inventory.performed += i => inventory_Input = true;
-
             if (inventory_Input)
             {
                 inventoryFlag = !inventoryFlag;

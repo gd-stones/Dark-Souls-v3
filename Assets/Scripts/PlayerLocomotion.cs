@@ -110,7 +110,6 @@ namespace StonesGaming
 
         public void HandleRollingAndSprinting(float delta)
         {
-            //if (animatorHandler.anim.GetBool("isInteracting"))
             if (playerManager.isInteracting)
                 return;
 
