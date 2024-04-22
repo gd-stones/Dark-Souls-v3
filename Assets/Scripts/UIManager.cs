@@ -5,6 +5,7 @@ namespace StonesGaming
     public class UIManager : MonoBehaviour
     {
         public PlayerInventory playerInventory;
+        EquipmentWindowUI equipmentWindowUI;
 
         [Header("UI Windows")]
         public GameObject hudWindow;
@@ -16,9 +17,16 @@ namespace StonesGaming
         public Transform weaponInventorySlotsParent;
         WeaponInventorySlot[] weaponInventorySlots;
 
+
+        void Awake()
+        {
+            equipmentWindowUI = FindObjectOfType<EquipmentWindowUI>();
+        }
+
         void Start()
         {
             weaponInventorySlots = weaponInventorySlotsParent.GetComponentsInChildren<WeaponInventorySlot>();
+            equipmentWindowUI.LoadWeaponsOnEquipmentScreen(playerInventory);
         }
 
         public void UpdateUI()
