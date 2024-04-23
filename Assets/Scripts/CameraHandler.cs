@@ -33,9 +33,11 @@ namespace StonesGaming
         public float minimumCollisionOffset = 0.2f;
 
         public Transform currentLockOnTarget;
-        
+
         List<CharacterManager> availableTargets = new List<CharacterManager>();
         public Transform nearestLockOnTarget;
+        public Transform leftLockTarget;
+        public Transform rightLockTarget;
         public float maximumLockOnDistance = 30f;
 
         void Awake()
@@ -89,7 +91,7 @@ namespace StonesGaming
                 Vector3 dir = currentLockOnTarget.position - transform.position;
                 dir.Normalize();
                 dir.y = 0;
-                
+
                 Quaternion targetRotation = Quaternion.LookRotation(dir);
                 transform.rotation = targetRotation;
 
@@ -99,7 +101,7 @@ namespace StonesGaming
                 targetRotation = Quaternion.LookRotation(dir);
                 Vector3 eulerAngle = targetRotation.eulerAngles;
                 eulerAngle.y = 0;
-                cameraPivotTransform.localEulerAngles = eulerAngle; 
+                cameraPivotTransform.localEulerAngles = eulerAngle;
             }
         }
 
@@ -129,6 +131,9 @@ namespace StonesGaming
         public void HandleLockOn()
         {
             float shortestDistance = Mathf.Infinity;
+            float shortestDistanceOfLeftTarget = Mathf.Infinity;
+            float shortestDistanceOfRightTarget = Mathf.Infinity;
+
             Collider[] colliders = Physics.OverlapSphere(targetTransform.position, 26);
 
             for (int i = 0; i < colliders.Length; i++)
@@ -157,6 +162,27 @@ namespace StonesGaming
                 {
                     shortestDistance = distanceFromTarget;
                     nearestLockOnTarget = availableTargets[k].lockOnTransform;
+                }
+
+                if (inputHandler.lockOnFlag)
+                {
+                    Vector3 relativeEnemyPosition = currentLockOnTarget.InverseTransformPoint(availableTargets[k].transform.position);
+                    var distanceFromLeftTarget = currentLockOnTarget.transform.position.x - availableTargets[k].transform.position.x;
+                    var distanceFromRightTarget = currentLockOnTarget.transform.position.x + availableTargets[k].transform.position.x;
+
+                    if (relativeEnemyPosition.x > 0.0f && distanceFromLeftTarget < shortestDistanceOfLeftTarget)
+                    {
+                        shortestDistanceOfLeftTarget = distanceFromLeftTarget;
+                        leftLockTarget = availableTargets[k].lockOnTransform;
+                    }
+
+                    if (relativeEnemyPosition.x < 0.0f && distanceFromRightTarget < shortestDistanceOfRightTarget)
+                    {
+                        shortestDistanceOfRightTarget = distanceFromRightTarget;
+                        rightLockTarget = availableTargets[k].lockOnTransform;
+
+                        // 4:55s / 11:27
+                    }
                 }
             }
         }
